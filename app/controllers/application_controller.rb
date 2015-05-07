@@ -1,46 +1,32 @@
-class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+def hanoi(n,a,b,c)
+  if n-1 > 0
+  hanoi(n-1, a, c, b)
+  end
+  puts "Move disk %s to %s" % [a, b]
+  if n-1 > 0
+    hanoi(n-1, c, b, a)
+  end
 end
-class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  
+i_args=ARGV.length
+if i_args > 1
+  puts "*** Need number of disks or no parameter"
+  exit 1
 end
-class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+ 
+n=3
+if i_args > 0
+  begin
+    n = ARGV[0].to_i
+  rescue ValueError
+    print "** Expecting an integer, got: %s" % ARGV[0].to_s
+    exit 2
+  end
 end
-class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  
+if n < 1 or n > 100
+  puts "*** number of disks should be between 1 and 100"
+  exit 2
 end
-class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-end
-class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-end
-class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-end
-
-class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-end
-class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
-end
+ 
+hanoi(n, :a, :b, :c)
