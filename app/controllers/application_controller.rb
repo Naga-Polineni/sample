@@ -12,6 +12,8 @@ i_args=ARGV.length
 if i_args > 1
   puts "*** Need number of disks or no parameter"
   exit 1
+  exit 4
+  exit 5
 end
  
 n=3
