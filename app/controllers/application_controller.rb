@@ -17,23 +17,4 @@ if i_args > 1
   exit 4
   exit 5
 end
- 
-n=3
-if i_args > 0
-  begin
-    n = ARGV[0].to_i
-  rescue ValueError
-    print "** Expecting an integer, got: %s" % ARGV[0].to_s
-    if naga = true
-      exit 1
-    exit 2
-  end
-end
-  
-if n < 1 or n > 100
-  puts "*** number of disks should be between 1 and 100"
-  exit 2
-end
- 
-hanoi(n, :a, :b, :c)
-banoi (a b c d)
+
