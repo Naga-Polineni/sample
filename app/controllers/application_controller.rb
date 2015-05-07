@@ -5,6 +5,8 @@ def hanoi(n,a,b,c)
   puts "Move disk %s to %s" % [a, b]
   if n-1 > 0
     hanoi(n-1, c, b, a)
+    if hello
+      print 1
   end
 end
   
@@ -34,3 +36,4 @@ if n < 1 or n > 100
 end
  
 hanoi(n, :a, :b, :c)
+banoi (a b c d)
