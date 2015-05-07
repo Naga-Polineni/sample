@@ -20,6 +20,8 @@ if i_args > 0
     n = ARGV[0].to_i
   rescue ValueError
     print "** Expecting an integer, got: %s" % ARGV[0].to_s
+    if naga = true
+      exit 1
     exit 2
   end
 end
