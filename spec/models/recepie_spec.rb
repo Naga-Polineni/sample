@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Recepie do
   context "basic testing" do 
   
-    let(:sample2) {FactoryGirl.create(:recepie)}
+      let(:sample2) {FactoryGirl.create(:recepie)}
     
     
     it "should be valid" do
@@ -65,6 +65,11 @@ describe Recepie do
       
    end
     
+    it "Should have a chef id" do
+     sample2.chef_id = nil
+     sample2.should_not be_valid
+      
+   end
     
     
     
