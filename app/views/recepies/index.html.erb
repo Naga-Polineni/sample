@@ -14,7 +14,7 @@
     </div>
     
     <div class = "col-lg-8 well" >
-      <h4> <%= link_to recepie.name, '' %> </h4>
+      <h4> <%= link_to recepie.name, recepy_path(recepie) %> </h4>
       <p> <%= recepie.summary %> </p>
       <p class="quite"> <small> <%= time_ago_in_words(recepie.created_at) %> ago </small> </p>
     </div>
