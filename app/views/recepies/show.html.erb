@@ -1,0 +1,17 @@
+<h1><%= @recepie.name %></h1>
+
+<div class= "row">
+  
+  <div class = "col-md-4 pull-right centre">
+    <%= gravatar_for @recepie.chef, size:200 %>
+    <h5> Brought to you by: <%= @recepie.chef.name %> </h5>
+  </div>
+  <h4><%= @recepie.summary %></h4>
+  <div class = "col-md-8 well">
+    
+    <Strong>Steps involved</Strong>
+    <p> <%= @recepie.description %></p>
+  </div>
+</div>
+
+<h5> <%= link_to "Return", recepies_path, class: "btn btn-warning btn-small " %> </h5>
