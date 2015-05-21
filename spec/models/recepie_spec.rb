@@ -41,7 +41,7 @@ describe Recepie do
    
    it "Summary should not be too long" do
      
-     sample2.summary = "a" * 101
+     sample2.summary = "a" * 401
      sample2.should_not be_valid
       
    end
@@ -54,7 +54,7 @@ describe Recepie do
    
    it "Description should not be too long" do
      
-     sample2.description = "a" * 101
+     sample2.description = "a" * 401
      sample2.should_not be_valid
       
    end
