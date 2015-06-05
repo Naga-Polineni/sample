@@ -21,9 +21,23 @@ class RecepiesController < ApplicationController
       redirect_to recepies_path
     else 
     render :new
-    end
-  
+    end\
   end
+  
+  def edit
+    @recepie =Recepie.find(params[:id])
+  end
+  
+  def update
+    @recepie =Recepie.find(params[:id])
+    if @recepie.update(request_params)
+      flash[:success] = "You have successfully edited your recepie"
+      redirect_to recepy_path(@recepie)
+    else
+      render :edit
+    end
+  end
+  
   
   private 
     
