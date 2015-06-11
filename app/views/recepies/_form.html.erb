@@ -1,6 +1,6 @@
 <div class = "row">
   <div class = "well col-md-8 col-md-offset-2">
-    <%= form_for @recepie do |f| %>
+    <%= form_for(@recepie, html: { multipart: true }) do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %>
       
@@ -9,6 +9,8 @@
       
       <%= f.label :description %>
       <%= f.text_area :description, rows: "10" %>
+      
+      <span class = "picture"><%= f.file_field :picture , accept: 'image/jpeg,image/png,image/gif' %></span>
       
       <%= f.submit(@recepie.new_record? ? "New Recepie" : "Edit Recepie" , class: "btn btn-success") %>
     <% end %>

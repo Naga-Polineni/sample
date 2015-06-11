@@ -1,5 +1,6 @@
 class RecepiesController < ApplicationController
   
+   
   def index
     @recepies = Recepie.all
   end
@@ -42,7 +43,7 @@ class RecepiesController < ApplicationController
   private 
     
     def request_params
-      params.require(:recepie).permit(:name,:summary,:description)
+      params.require(:recepie).permit(:name,:summary,:description,:picture)
     end
   
 end
