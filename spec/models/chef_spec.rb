@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Chef do
   context "basic testing" do 
   
-    let(:sample2) {FactoryGirl.create(:chef , name: "Aditya" )}
+    let(:sample2) {FactoryGirl.create(:chef , name: "Aditya" , password: "password" )}
     
     
     it "should be valid" do

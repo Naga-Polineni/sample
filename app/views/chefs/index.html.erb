@@ -1,0 +1,16 @@
+<h1>List of all the chefs registered </h1>
+<% @chef.each do |chef| %>
+  <div class= "row">
+    <div class = "col-md-2 show_recepie">
+        <%= gravatar_for chef, size:100 %> 
+        <h5><%= link_to "#{chef.name}", chef_path(chef.id) %></h5>
+    </div>
+    
+    <div class = "col-md-10 well">
+      <h2> Some information about the chef, must be added later </h2>
+      
+    </div>
+  </div>
+<% end %>
+    
+           

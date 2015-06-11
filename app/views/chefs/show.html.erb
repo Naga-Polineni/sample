@@ -1,0 +1,29 @@
+<h1><%= @chef.name %></h1>
+<div class = "centre ">
+  <%= gravatar_for @chef, size:200 %>
+  <h5> <%= @chef.name %> </h5>
+</div>
+
+<% @chef.recepies.each do |recepie| %>
+  <li><h3> <%= link_to "#{recepie.name}" , recepy_path(recepie.id) %> </h3></li>
+  <div class = 'row'>
+    
+    <div class = 'col-md-9 well'>
+      <li><h4><%= recepie.summary %></h4></li>
+      <Strong>Steps involved</Strong>
+      <li><p> <%= recepie.description %></p></li>
+    </div>
+      
+    <div class = "col-md-3 show_recepie pull-right">
+      <%= image_tag(recepie.picture.url , size: "100x100" , class: "gravatar") if recepie.picture? %>
+    </div>
+  </div>
+<% end %>
+        
+
+  
+
+      
+     
+
+

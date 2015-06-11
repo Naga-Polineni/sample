@@ -1,32 +1,23 @@
 <h1> All Recepies</h1>
-<hr>
-
-<% @recepies.each do |recepie| %>
-  <div class= "row">
-    <div class = "col-md-2">
-      <section class= "chef_info center">
-        <%= gravatar_for recepie.chef, size:100 %>  
-        <h5><%= recepie.chef.name %></h5>
-        
-        
-      </section>
-      
-    </div>
-    
-    
-    
-    <div class = "col-lg-6 well" >
-      <h4> <%= link_to recepie.name, recepy_path(recepie) %> </h4>
-      <p> <%= recepie.summary %> </p>
-      <p class="quite"> <small> <%= time_ago_in_words(recepie.created_at) %> ago </small> </p>
-    </div>
-    
-    <div class = 'col-md-4'>
-      <%= image_tag(recepie.picture.url , size: '250x150' , class: "gravatar") if recepie.picture? %>
-    </div>
-  </div>
   <hr>
-
-<% end %>
-  
+    <% @recepies.each do |recepie| %>
+      <div class= "row">
+        <div class = "col-md-2">
+          <section class= "chef_info center">
+            <%= gravatar_for recepie.chef, size:100 %>  
+            <h5><%= recepie.chef.name %></h5>
+          </section>
+        </div>
+        <div class = "col-lg-6 well" >
+          <h4> <%= link_to recepie.name, recepy_path(recepie) %> </h4>
+          <p> <%= recepie.summary %> </p>
+          <p class="quite"> <small> <%= time_ago_in_words(recepie.created_at) %> ago </small> </p>
+        </div>
+        <div class = 'col-md-4'>
+          <%= image_tag(recepie.picture.url , size: '250x150' , class: "gravatar") if recepie.picture? %>
+        </div>
+      </div>
+    
+    <% end %>
+  <hr>
 </div>
