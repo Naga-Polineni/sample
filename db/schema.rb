@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150611165025) do
+ActiveRecord::Schema.define(version: 20150625173425) do
 
   create_table "chefs", force: true do |t|
     t.string   "name"
@@ -19,6 +19,20 @@ ActiveRecord::Schema.define(version: 20150611165025) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
+  end
+
+  create_table "likes", force: true do |t|
+    t.boolean  "like"
+    t.integer  "chef_id"
+    t.integer  "recepie_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "purge_tokens", force: true do |t|
+    t.string   "field"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "recepies", force: true do |t|
@@ -29,6 +43,26 @@ ActiveRecord::Schema.define(version: 20150611165025) do
     t.datetime "updated_at"
     t.integer  "chef_id"
     t.string   "picture"
+  end
+
+  create_table "sample_chefs", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "original_created_at"
+    t.datetime "original_updated_at"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sample_recepies", force: true do |t|
+    t.string   "name"
+    t.string   "summary"
+    t.string   "description"
+    t.integer  "chef_id"
+    t.string   "picture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

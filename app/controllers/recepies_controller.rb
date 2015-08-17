@@ -1,6 +1,6 @@
 class RecepiesController < ApplicationController
   
-   
+  require 'benchmark' 
   def index
     @recepies = Recepie.all
   end
@@ -16,6 +16,14 @@ class RecepiesController < ApplicationController
   def create
     @recepie = Recepie.new(request_params)
     @recepie.chef = Chef.find(1)
+    
+    @recepie.save
+    
+    @xyz = PurgeToken.first
+    #binding.pry
+  p Benchmark.measure { @purge = PurgeToken.new(field: @recepie)
+                       @purge.save}
+    
   
     if @recepie.save
       flash[:success] = "Recepie has been added"

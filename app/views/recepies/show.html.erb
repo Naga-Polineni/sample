@@ -13,11 +13,19 @@
   </div>
   
   
-   <div class = "col-md-8 well">
+  <div class = "col-md-8 well">
      
     
     <Strong>Steps involved</Strong>
     <p> <%= @recepie.description %></p>
+    <div class = 'pull-right'>
+      <%= link_to '' do %>
+        <i class = "glyphicon glyphicon-thumbs-up"></i>
+      <% end %>&nbsp &nbsp&nbsp &nbsp
+      <%= link_to '' do %>
+        <i class = "glyphicon glyphicon-thumbs-down"></i>
+      <% end %>
+     </div>
   </div>
   
   <div class ="col-md-1.5 pull-right">
