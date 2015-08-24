@@ -12,6 +12,8 @@ class RecepiesController < ApplicationController
   def new
     @recepie = Recepie.new
   end
+
+  # This is just a comment
   
   def create
     @recepie = Recepie.new(request_params)
